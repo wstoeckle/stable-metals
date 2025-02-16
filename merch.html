@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shop Merchandise</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merchandise – Stable Metals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary-color: #ff3b30;
+      --secondary-color: #000;
+      --background-light: #f8f8f8;
+      --text-color: #333;
+      --spacing-unit: clamp(1rem, 2vw, 2rem);
+    }
+    
     body { 
       font-family: 'Space Grotesk', sans-serif; 
       background: #1a1a1a; 
@@ -15,22 +32,86 @@
       text-align: center; 
       margin-bottom: 2rem; 
     }
+    
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-unit);
+      margin-top: var(--spacing-unit);
+    }
+    
+    .merch-item {
+      background: #fff;
+      border-radius: 4px;
+      padding: var(--spacing-unit);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .merch-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: var(--spacing-unit);
+    }
+    
+    .merch-item h3 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .price {
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
   </style>
 </head>
 <body>
-  <h1>Shop Our Merchandise</h1>
-  <!-- Ecwid Embed Code -->
-  <div id="my-store-112462508"></div>
-  <script data-cfasync="false" type="text/javascript" 
-          src="https://app.ecwid.com/script.js?112462508&data_platform=code&data_date=2025-02-15" 
-          charset="utf-8">
-  </script>
-  <script type="text/javascript">
-    xProductBrowser("categoriesPerRow=3", 
-                    "views=grid(20,3) list(60) table(60)", 
-                    "categoryView=grid", 
-                    "searchView=list", 
-                    "id=my-store-112462508");
-  </script>
+  <header>
+    <div class="container">
+      <h1>Stable Metals</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#philosophy">Philosophy</a></li>
+          <li><a href="/#projects">Projects</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/merch.html">Merchandise</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Official Merchandise</h2>
+        <p>Support our artistic vision with our curated collection of merchandise.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="merch-grid">
+          <article class="merch-item">
+            <img src="assets/merch-1.jpg" alt="Limited Edition Print">
+            <h3>Limited Edition Print</h3>
+            <p>Hand-numbered series from our penny installation.</p>
+            <p class="price">$150</p>
+          </article>
+          
+          <!-- Add more merch items as needed -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Stable Metals. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
