@@ -3,10 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Add meta description for SEO -->
+  <meta name="description" content="Official merchandise from Stable Metals. Shop our curated collection of artistic metal works and accessories." />
+  
   <title>Merchandise – Stable Metals</title>
+  
+  <!-- Add favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦅</text></svg>">
+  
+  <!-- Preload fonts for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  
   <style>
     * {
       margin: 0;
@@ -73,51 +82,6 @@
       font-size: 1.2rem;
       opacity: 0.8;
     }
-    
-    .merch-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 2rem 0;
-    }
-    
-    .merch-item {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-    
-    .merch-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .merch-item img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-    
-    .merch-item h3 {
-      color: var(--secondary-color);
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-    }
-    
-    .merch-item p {
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
-    
-    .price {
-      color: var(--primary-color);
-      font-weight: 600;
-      font-size: 1.4rem;
-      margin-top: 1rem;
-    }
 
     footer {
       text-align: center;
@@ -143,24 +107,6 @@
         padding: 0 1rem;
       }
 
-      .merch-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem 0;
-      }
-
-      .merch-item {
-        padding: 1rem;
-      }
-
-      .merch-item img {
-        height: 250px;
-      }
-
-      .merch-item h3 {
-        font-size: 1.2rem;
-      }
-
       header {
         padding: 1rem 0;
       }
@@ -180,21 +126,28 @@
       .hero {
         padding: 2rem 0;
       }
+    }
 
-      .merch-item img {
-        height: 200px;
-      }
-
-      .price {
-        font-size: 1.2rem;
-      }
+    /* Add loading state styles for Ecwid store */
+    #my-store-112462508 {
+      min-height: 400px;
+      position: relative;
+    }
+    
+    /* Optional: Add a subtle background to the store section */
+    .section {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 2rem 0;
+      margin: 2rem 0;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>Stable Metals</h1>
+      <!-- Add link to home on logo -->
+      <h1><a href="/" style="color: var(--text-color); text-decoration: none;">Stable Metals</a></h1>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -202,7 +155,7 @@
           <li><a href="/#philosophy">Philosophy</a></li>
           <li><a href="/#projects">Projects</a></li>
           <li><a href="/#contact">Contact</a></li>
-          <li><a href="/merch.html">Merchandise</a></li>
+          <li><a href="/merch.html" aria-current="page">Merchandise</a></li>
         </ul>
       </nav>
     </div>
@@ -218,15 +171,15 @@
 
     <section class="section">
       <div class="container">
-        <div class="merch-grid">
-          <article class="merch-item">
-            <img src="assets/merch-1.jpg" alt="Limited Edition Print">
-            <h3>Limited Edition Print</h3>
-            <p>Hand-numbered series from our penny installation.</p>
-            <p class="price">$150</p>
-          </article>
-          
-          <!-- Add more merch items as needed -->
+        <!-- Ecwid Store Integration -->
+        <div id="my-store-112462508"></div>
+        <div>
+          <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?112462508&data_platform=code&data_date=2025-02-15" charset="utf-8"></script>
+          <script type="text/javascript">
+            window.addEventListener('load', function() {
+              xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-112462508");
+            });
+          </script>
         </div>
       </div>
     </section>
