@@ -17,53 +17,177 @@
     :root {
       --primary-color: #ff3b30;
       --secondary-color: #000;
-      --background-light: #f8f8f8;
-      --text-color: #333;
+      --background-dark: #1a1a1a;
+      --text-color: #fff;
       --spacing-unit: clamp(1rem, 2vw, 2rem);
     }
     
     body { 
-      font-family: 'Space Grotesk', sans-serif; 
-      background: #1a1a1a; 
-      color: white; 
-      padding: 2rem; 
+      font-family: 'Work Sans', sans-serif; 
+      background: var(--background-dark); 
+      color: var(--text-color); 
+      min-height: 100vh;
     }
-    h1 { 
-      text-align: center; 
-      margin-bottom: 2rem; 
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-unit);
+    }
+
+    header {
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 0;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.8;
     }
     
     .merch-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--spacing-unit);
-      margin-top: var(--spacing-unit);
+      gap: 2rem;
+      padding: 2rem 0;
     }
     
     .merch-item {
-      background: #fff;
-      border-radius: 4px;
-      padding: var(--spacing-unit);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
     
+    .merch-item:hover {
+      transform: translateY(-5px);
+    }
+
     .merch-item img {
       width: 100%;
       height: 300px;
       object-fit: cover;
-      border-radius: 4px;
-      margin-bottom: var(--spacing-unit);
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
     
     .merch-item h3 {
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+    
+    .merch-item p {
+      color: #666;
       margin-bottom: 0.5rem;
     }
     
     .price {
       color: var(--primary-color);
       font-weight: 600;
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
+      font-size: 1.4rem;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+      }
+
+      .merch-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+      }
+
+      .merch-item {
+        padding: 1rem;
+      }
+
+      .merch-item img {
+        height: 250px;
+      }
+
+      .merch-item h3 {
+        font-size: 1.2rem;
+      }
+
+      header {
+        padding: 1rem 0;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+    }
+
+    /* Small mobile adjustments */
+    @media (max-width: 480px) {
+      :root {
+        --spacing-unit: 1rem;
+      }
+
+      .hero {
+        padding: 2rem 0;
+      }
+
+      .merch-item img {
+        height: 200px;
+      }
+
+      .price {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
