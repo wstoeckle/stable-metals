@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stable Metals – Art Collective</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,11 +112,13 @@
       letter-spacing: -0.03em;
     }
     
+    /* Center paragraphs in the hero, limit their width */
     .hero p {
       font-size: clamp(1.1rem, 2vw, 1.3rem);
       max-width: 700px;
-      margin: 0;
+      margin: 0 auto; /* Centers the text block */
       opacity: 0.9;
+      line-height: 1.8;
     }
     
     .section {
@@ -131,11 +133,13 @@
       letter-spacing: -0.02em;
     }
     
+    /* Center paragraphs in the section, limit their width */
     .section p {
       font-size: clamp(1rem, 1.5vw, 1.1rem);
-      max-width: 800px;
-      margin-bottom: var(--spacing-unit);
+      max-width: 700px;
+      margin: 0 auto var(--spacing-unit); /* auto left/right margin */
       line-height: 1.8;
+      text-align: left; /* Keep text left-aligned if desired */
     }
     
     .section.alternate {
@@ -199,10 +203,6 @@
       
       .hero {
         text-align: center;
-      }
-      
-      .hero p {
-        margin: 0 auto;
       }
       
       .hero-image {
